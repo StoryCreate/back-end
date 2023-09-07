@@ -9,11 +9,10 @@ import { Server as Socket } from "socket.io";
 import connectDatabase from "@helpers/connectDatabase";
 import socketController from "socket/init";
 import signSocket from "socket/signSocket";
-import scheduleController from "@lib/controllers/scheduleController";
 import fs from "node:fs";
 // import SocketSign from "@routes/sockets/sign";
 
-const port = normalizePort(process.env.PORT || "3000");
+const port = normalizePort(process.env.PORT || "8000");
 app.set("port", port);
 
 const server = http.createServer(app);
@@ -33,8 +32,6 @@ if (process.env.NODE_ENV !== "Testing") {
     const io = await handleServerListening();
 
     app.set("io", io);
-    app.set("scheduler", new scheduleController(io));
-
     io.on("connection", (socket) => new socketController(socket));
   });
   server.listen(port);
