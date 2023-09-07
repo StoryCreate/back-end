@@ -1,0 +1,7 @@
+{
+  "watch": [
+      "*"
+    ],
+    "ext": "js,json,ts,",
+    "exec": "NODE_ENV=Testing TS_NODE_FILES=true mocha -r tsconfig-paths/register -r ts-node/register"
+}

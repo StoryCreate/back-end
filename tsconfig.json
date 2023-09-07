@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "es2016",
+    "module": "commonjs",
+    "outDir": "dist",
+    "esModuleInterop": true,
+    "strict": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@lib/*": ["lib/*"],
+      "@helpers/*": ["helpers/*"],
+      "@models/*": ["models/*"],
+      "@routes/*": ["routes/*"],
+      "@security/*": ["security/*"]
+    }
+  },
+  "include": ["**/*.ts", "test/socket.test.js"],
+  "exclude": ["node_modules"]
+}
